@@ -13,7 +13,7 @@ $(document).on('keydown', function(e) {
             $('#mainText').text(text.substring(0, curChar));
         } else if (e.key === 'Backspace') {
             userText = userText.substring(0, userText.length - 1);
-        } else {
+        } else if (e.key.length === 1) {
              userText += e.key;
         }
     }
