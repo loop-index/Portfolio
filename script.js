@@ -1,5 +1,5 @@
 
-let text = 'show section '
+let text = 'info Duong Nguyen'
 let curChar = 0;
 let userText = "";
 
@@ -17,5 +17,5 @@ $(document).on('keydown', function(e) {
              userText += e.key;
         }
     }
-    $('#mainText').text(text.substring(0, curChar) + userText);
+    $('#mainText').text("> " + text.substring(0, curChar) + userText);
 });
