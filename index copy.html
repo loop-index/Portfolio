@@ -17,20 +17,18 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
     <div id="app">
-        <div class="container-fluid flex-container sticky-top" id="intro">
-            <div class="d-flex flex-column justify-content-center align-items-center" id="intro-flex">
-                <div class="row" id="intro-content">
-                    <div class="col-7 d-flex flex-column justify-content-end" id="intro-text">
-                    </div>
-                    <div class="col-5 d-flex flex-column justify-content-center">
-                        <img class="img-fluid rounded-pill" src="duong.jpg" alt="intro image" id="intro-image">
-                    </div>
-                </div>
+        <div class="container-fluid flex-container" id="content">
+            <div id="terminal">
+                <p>Welcome to the Lup index! Type a command...</p>
+                <p id="mainText">></p>
             </div>
         </div>
     </div>
 
+
+    <script type="module" src="firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
     <script src="script.js" type="module"></script>
 </body>

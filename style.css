@@ -1,45 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --bg-color: #1e1e1e;
     --yellow: #fbc324;
     --white: #faf0e6;
 }
 
-body {
+.app {
     background-color: var(--bg-color);
 }
 
-#app {
-    width: 100vw;
+#intro {
+    background-color: #212745;
     height: 100vh;
 }
 
-#content {
+#intro-flex {
     width: 100%;
     height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10vh 10vw;
 }
 
-#terminal {
-    background-color: black;
-    border-radius: 10px;
-    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
-
-    min-height: 60%;
-    height: auto;
-    width: 80%;
-
-    overflow: hidden;
-    word-break: break-all;
-    padding: 2%;
+#intro-image {
+    border: 10px solid #A7EA52;
+    border-radius: 50%;
+    padding: 10px;
 }
 
-p {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 2rem;
-    color: var(--yellow);
+#intro-text {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    padding: 5px;
+}
+
+.grad {
+    background: linear-gradient(to right, #A7EA52, #5DCEAF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+    color: #FFFF00;
 }
