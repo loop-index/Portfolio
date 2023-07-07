@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Duong Nguyen's Portfolio</title>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -17,17 +17,10 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-    <div id="app">
-        <div class="container-fluid flex-container" id="content">
-            <div id="terminal">
-                <p>Welcome to the Lup index! Type a command...</p>
-                <p id="mainText">></p>
-            </div>
-        </div>
+    <div class="container-fluid d-flex flex-column align-items-center" id="app">
+        <input type="text" class="form-control autofill autodel" id="name" placeholder="Name" data-cur=0>
+        <input type="text" class="form-control autofill autodel" id="school" placeholder="School" data-cur=0>
     </div>
-
-
     <script type="module" src="firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
     <script src="script.js" type="module"></script>

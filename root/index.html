@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duong Nguyen's Portfolio</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/5f24f51df9.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- First Screen -->
+    <div class="container-fluid d-flex flex-column align-items-center justify-content-between sticky-top"
+        id="scrollScreen">
+        <!-- Header Icons -->
+        <div class="container-fluid flex-container" id="header">
+            <div class="d-flex justify-content-between align-items-center icons grad">
+                <a href="mailto: nguye958@msu.edu" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="tel: 15179805218" target="_blank"><i class="fas fa-phone-alt"></i></a>
+                <a href="/Duong Nguyen Resume.pdf" target="_blank"><i class="fas fa-file-lines"></i></a>
+                <a href="https://github.com/loop-index" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/duongtn/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="align-self-center" id="intro">
+            <div class="d-flex flex-column justify-content-center align-items-center" id="intro-flex">
+                <div class="row" id="intro-content">
+                    <div class="col-7 d-flex flex-column justify-content-end" id="intro-text">
+                    </div>
+                    <div class="col-5 d-flex flex-column justify-content-center">
+                        <img class="img-fluid rounded-pill" src="duong.jpg" alt="intro image" id="intro-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mouse Indicator -->
+        <div class="container-fluid flex-container" id="footer">
+            <div class="d-flex justify-content-center align-items-center icons">
+                <i class="fas fa-mouse" id="fa-mouse"></i>
+            </div>
+        </div>
+    </div>
+    <!-- Second Screen -->
+    <div class="container-fluid d-flex justify-content-center" id="projectScreen">
+        <div class="container-fluid" style="width: 90vw;">
+            <div class="d-flex justify-content-start" style="height: 15vh;">
+                <h1 class="grad" style="font-size: 5vw; line-height: 2vw;" id="projectHeader">my projects</h1>
+            </div>
+            <div class="d-flex flex-column justify-content-around" style="height: auto;">
+                <div class="row">
+                    <div class="col-4 ad">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="highlight" style="font-size: 3vw; line-height: 4vw;">
+                            dsp (demand-side platform)
+                        </h3>
+                        <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                        <p class="grad" style="font-size: 2vw; line-height: 2.5vw;">
+                            a project inspired by my girlfriend who is studying advertising sciences. a dsp manages ads from advertisers, using algorithms to determine a suitable ad to serve on websites based on user demographics and other factors.
+                        </p>
+                        <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                        <p class="grad" style="font-size: 2vw; line-height: 2.5vw;">
+                            gross oversimplification, i know.
+                        </p>
+                    </div>
+                </div>
+                <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-around">
+                        <span class="badge bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">try some user tags:</span>
+                        <button type="button" class="btn bg-grad dspDemo" style="font-size: 1.5vw; line-height: 2vw; width: auto;">automobile</button>
+                        <button type="button" class="btn bg-grad dspDemo" style="font-size: 1.5vw; line-height: 2vw; width: auto;">health</button>
+                        <button type="button" class="btn bg-grad dspDemo" style="font-size: 1.5vw; line-height: 2vw; width: auto;">food</button>
+                        <button type="button" class="btn bg-grad dspDemo" style="font-size: 1.5vw; line-height: 2vw; width: auto;">clothing</button>
+                        <button type="button" class="btn bg-grad dspDemo" style="font-size: 1.5vw; line-height: 2vw; width: auto;">education</button>
+                        <button type="button" class="btn bg-grad dspDemo" style="font-size: 1.5vw; line-height: 2vw; width: auto;">luxury</button>
+                        <button type="button" class="btn bg-grad dspDemo" style="font-size: 1.5vw; line-height: 2vw; width: auto;">sports</button>
+                        <button type="button" class="btn bg-grad dspDemo" style="font-size: 1.5vw; line-height: 2vw; width: auto;">games</button>
+                    </div>
+                </div>
+                <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-4 ad">
+                    </div>
+                    <div class="col-7">
+                        <p class="grad" style="font-size: 2vw; line-height: 2.5vw;">
+                            the back-end is built in python, using sklearn models trained on advertising datasets to make a decision based on several factors. it is very rudimentary, though.
+                        </p>
+                        <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                        <p class="grad" style="font-size: 2vw; line-height: 2.5vw;">
+                            also, i don’t have time for mockup ad creatives, so enjoy cat pictures.
+                        </p>
+                        <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">python</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">sklearn</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">pandas</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">mysql</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">flask</span>
+                    </div>
+                </div>
+                <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                <p style="font-size: 1.5vw; line-height: 2vw;"> </p><p style="font-size: 1.5vw; line-height: 2vw;"> </p><p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                
+
+                <!-- Debt Tracker -->
+                <div class="row">
+                    <div class="col-4" id="debtTracker">
+                        <div class="card p-0 m-0" style="width: 100%; aspect-ratio: 1/1;">
+                            <img src="debt.png" class="card-img-top" alt="...">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <button type="button" class="btn bg-grad" id="debtTrackerDemo" style="font-size: 1.5vw; line-height: 2vw;">try it!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <h3 class="highlight" style="font-size: 3vw; line-height: 4vw;">
+                            payback pal
+                        </h3>
+                        <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                        <p class="grad" style="font-size: 2vw; line-height: 2.5vw;">
+                            an application that i made because i'm in college and i can't keep track of who i'm owing money to after hangouts or shopping trips. i tried to make the process as simple and intuitive as possible, as i am well aware of the leading competition - notepads.
+                        </p>
+                        <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">html</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">css</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">javascript</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">jquery</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">bootstrap</span>
+                        <span class="badge rounded-pill bg-grad text-dark" style="font-size: 1.5vw; line-height: 2vw;">firebase</span>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 1.5vw; line-height: 2vw;"> </p>
+
+        </div>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>

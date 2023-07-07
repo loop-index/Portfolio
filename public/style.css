@@ -11,13 +11,12 @@
     --white: #faf0e6;
 }
 
-.app {
-    background-color: var(--bg-color);
+#app {
+    background-color: #212745;
+    height: 100vh;
 }
 
 #intro {
-    background-color: #212745;
-    height: 100vh;
 }
 
 #intro-flex {
@@ -27,9 +26,9 @@
 }
 
 #intro-image {
-    border: 10px solid #A7EA52;
+    border: 1vw solid #A7EA52;
     border-radius: 50%;
-    padding: 10px;
+    padding: 1vw;
 }
 
 #intro-text {
@@ -46,4 +45,35 @@
 
 .highlight {
     color: #FFFF00;
+}
+
+#header, #footer {
+    width: 20%;
+    /* position: absolute; */
+}
+
+a {
+    text-decoration: none;
+    color: #A7EA52;
+}
+
+a:hover {
+    color: #5DCEAF;
+}
+
+.icons {
+    padding: 5% 0;
+    text-decoration: none;
+    color: #A7EA52;
+    font-size: 2vw;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+#fa-mouse {
+    opacity: 0.2;
+    color: #A7EA52;
 }

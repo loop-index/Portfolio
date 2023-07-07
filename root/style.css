@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #1e1e1e;
+    --yellow: #fbc324;
+    --white: #faf0e6;
+}
+
+body {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    height: 100vh;
+    /* background-color: #212745; */
+}
+
+#scrollScreen {
+    background-color: #212745;
+    height: 100vh;
+    position: absolute;
+}
+
+#intro {
+}
+
+#intro-flex {
+    width: 100%;
+    height: 100%;
+    padding: 10vh 10vw;
+}
+
+#intro-image {
+    border: 1vw solid #A7EA52;
+    border-radius: 50%;
+    padding: 1vw;
+}
+
+#intro-text {
+    padding: 5px;
+}
+
+.grad {
+    background: linear-gradient(to right, #A7EA52, #5DCEAF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-grad {
+    background: linear-gradient(to right, #A7EA52, #5DCEAF);
+}
+
+.bg-grad.active {
+    background: linear-gradient(to right, #84b840, #43937d);
+}
+
+.highlight {
+    color: #fbc324;
+}
+
+#header, #footer {
+    width: 20%;
+    /* position: absolute; */
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a:hover {
+    color: #5DCEAF;
+}
+
+.icons {
+    padding: 5% 0;
+    text-decoration: none;
+    color: #A7EA52;
+    font-size: 2vw;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+#fa-mouse {
+    opacity: 1;
+    color: #A7EA52;
+}
+
+#projectScreen {
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(33,39,69,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+#projectHeader {
+    padding: 5vh 0;
+}
+
+/* #debtTracker {
+    width: 60%;
+    height: 80vh;
+    border-radius: 5px;
+} */
+
+.project-desc {
+    width: 30%;
+    margin-left: 5vh;
+}
+
+.card {
+    margin-right: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+    z-index: 1;
+}
