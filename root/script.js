@@ -1,21 +1,21 @@
 import { debouncer, debounce_leading } from './utils.js';
 
-var introText = [`<p style="color: #5ECCF3; font-size: 8vw; line-height: 6vw;">hi, </p>
-<p style="color: #5ECCF3; font-size: 8vw; line-height: 6vw;">i'm <span class="grad">duong.</span></p>`,
+var introText = [`<p class="color-1" style="font-size: 7vw; line-height: 6vw;">hi, </p>
+<p class="color-1" style="font-size: 7vw; line-height: 6vw;">i'm <span class="highlight">duong.</span></p>`,
 
-    `<p style="color: #5ECCF3; font-size: 2vw; line-height: 2vw;"><span class="grad">i’m a rising junior studying </span><span class="highlight">computer science</span><span class="grad"> at michigan state university, with a minor in </span><span class="highlight">game development</span>.</p>
+    `<p class="color-1" style="font-size: 2vw; line-height: 2vw;"><span class="grad">i’m a rising junior studying </span><span class="highlight">computer science</span><span class="grad"> at michigan state university, with a minor in </span><span class="highlight">game development</span>.</p>
 <br>
-<p style="color: #5ECCF3; font-size: 2vw; line-height: 2vw;"><span class="grad">in my free time, when i’m not endlessly browsing the net, i do play </span><span class="highlight">guitar</span><span class="grad">. i am in a </span><a href="https://open.spotify.com/artist/3gmhn3vGKwE48jxT1w7bHh?si=t7-lW0iXRw6j7tnekwN0sA" target="_blank">band!</a></p>
+<p class="color-1" style="font-size: 2vw; line-height: 2vw;"><span class="grad">in my free time, when i’m not endlessly browsing the net, i do play </span><span class="highlight">guitar</span><span class="grad">. i am in a </span><a href="https://open.spotify.com/artist/3gmhn3vGKwE48jxT1w7bHh?si=t7-lW0iXRw6j7tnekwN0sA" target="_blank">band!</a></p>
 <br>
-<p style="color: #5ECCF3; font-size: 2vw; line-height: 2vw;"><span class="grad">i also used to be a first robotics kid. hello from team </span><a href="https://gart6520.com" target="_blank">6520</a>!</p>`,
+<p class="color-1" style="font-size: 2vw; line-height: 2vw;"><span class="grad">i also used to be a first robotics kid. hello from team </span><a href="https://gart6520.com" target="_blank">6520</a>!</p>`,
 
-    `<p style="color: #5ECCF3; font-size: 2vw; line-height: 2vw;">i have experience working in several web-related positions {</p>
+    `<p class="color-1" style="font-size: 2vw; line-height: 2vw;">i have experience working in several web-related positions {</p>
 <br style="line-height: 2vw;"><div class="tab">
 <p style="font-size: 2vw; line-height: 2vw;"><span class="highlight">dassault systemes </span><span style="color: white;">(r&d web developer intern)</span></p>
 <p style="font-size: 2vw; line-height: 2vw;"><span class="highlight">msu information services </span><span style="color: white;">(web developer intern)</span></p>
 <p style="font-size: 2vw; line-height: 2vw;"><span class="highlight">aisolutions jsc </span><span style="color: white;">(backend developer intern)</span></p>
 </div><br style="line-height: 2vw;">
-<p style="color: #5ECCF3; font-size: 2vw; line-height: 2vw;">}</p>`]
+<p class="color-1" style="font-size: 2vw; line-height: 2vw;">}</p>`]
 
 var curIntroText = 0;
 $("#intro-text").html(introText[curIntroText]);
@@ -56,47 +56,54 @@ var fadeTimeoutID = null;
 
 document.addEventListener("wheel", function (e) {
     // console.log('scrolling ' + e.deltaY)
+    // console.log(introFading)
     if (introFading) {
         clearTimeout(scrollTimeoutID);
-        clearTimeout(fadeTimeoutID);
+        // clearTimeout(fadeTimeoutID);
 
         scrollTimeoutID = setTimeout(() => {
             introFading = false;
             $("#fa-mouse").css("opacity", "1");
+            scrollTimeoutID = null;
+            console.log('scrolling stopped');
         }, 100);
+        console.log('new scroll ID: ' + scrollTimeoutID)
 
         return;
-    }
+    } else if (!scrollTimeoutID) {
+        if (curIntroText >= introText.length - 1 && e.deltaY > 0) {
+            $('body').css({
+                // "height": "auto",
+            });
+            $('#scrollScreen').removeClass('sticky-top');
+            $('#projectScreen').removeClass('d-none');
+            $('#fa-mouse').fadeOut(100);
 
-    if (curIntroText >= introText.length - 1 && e.deltaY > 0) {
-        $('body').css({
-            // "height": "auto",
-        });
-        $('#scrollScreen').removeClass('sticky-top');
-        $('#projectScreen').removeClass('d-none');
+        } else if ($(document).scrollTop() <= 0) {
+            $('body').css("height", "100vh");
+            $('#scrollScreen').addClass('sticky-top');
+            $('#projectScreen').addClass('d-none');
+            $('#fa-mouse').fadeIn(100);
 
-    } else if ($(document).scrollTop() <= 0) {
-        $('body').css("height", "100vh");
-        $('#scrollScreen').addClass('sticky-top');
-        $('#projectScreen').addClass('d-none');
+            if (e.deltaY < 0 && curIntroText > 0) {
+                curIntroText = Math.max(curIntroText - 1, 0);
+            } else if (e.deltaY > 0 && curIntroText < introText.length - 1) {
+                curIntroText = Math.min(curIntroText + 1, introText.length - 1);
+            } else {
+                return;
+            }
 
-        if (e.deltaY < 0 && curIntroText > 0) {
-            curIntroText = Math.max(curIntroText - 1, 0);
-        } else if (e.deltaY > 0 && curIntroText < introText.length - 1) {
-            curIntroText = Math.min(curIntroText + 1, introText.length - 1);
-        } else {
-            return;
+            introFading = true;
+            $("#intro-text").fadeOut(500, function () {
+                $(this).html(introText[curIntroText]);
+                $("#fa-mouse").css("opacity", "0.2");
+            }).fadeIn(500, null, function () {
+                // fadeTimeoutID = setTimeout(() => {
+                //     introFading = false;
+                //     $("#fa-mouse").css("opacity", "1");
+                // }, 500);
+            });
         }
-
-        introFading = true;
-        $("#intro-text").fadeOut(500, function () {
-            $(this).html(introText[curIntroText]);
-        }).fadeIn(500, null, function () {
-            fadeTimeoutID = setTimeout(() => {
-                introFading = false;
-                $("#fa-mouse").css("opacity", "1");
-            }, 500);
-        });
     }
 });
 
@@ -131,8 +138,8 @@ function updateAds(userTags) {
                 <div class="card p-0 m-0" style="width: 100%; aspect-ratio: 1/1; overflow: hidden">
                     <img src="https://cataas.com/${image}" class="card-img-top" alt="..." style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="overlay">
-                        <div class="card-img-overlay d-flex flex-column justify-content-end">
-                            <h5 class="card-title">${data.advertiser}</h5>
+                        <div class="card-img-overlay d-flex flex-column justify-content-end text-light">
+                            <h1 class="card-title">${data.advertiser}</h1>
                             <p class="card-text">${data.adText}</p>
                         </div>
                     </div>

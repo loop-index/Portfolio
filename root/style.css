@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Playfair+Display&family=Roboto+Mono&display=swap');
 
 *{
     margin: 0;
@@ -9,16 +9,36 @@
     --bg-color: #1e1e1e;
     --yellow: #fbc324;
     --white: #faf0e6;
+
+    /* --grad: linear-gradient(to right, #A7EA52, #5DCEAF);
+    --highlight: #fbc324;
+    --color-1: #5ECCF3;
+    --color-2: #FFFFFF;
+    --color-3: #A7EA52;
+    --color-4: #5DCEAF;
+    --color-5: #84b840; */
+
+    --grad: linear-gradient(to right, #ffffff, #cccccc);
+    --highlight: #fbc324;
+    --color-1: #999999;
+    --color-2: #FFFFFF;
+    --color-3: #fbc324;
+    --color-4: #bbbbbb;
+    --color-5: #888888;
 }
 
 body {
-    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    font-family: "Roboto Mono", monospace;
     height: 100vh;
     /* background-color: #212745; */
 }
 
+.color-1 {
+    color: var(--color-1);
+}
+
 #scrollScreen {
-    background-color: #212745;
+    background-color: #222222;
     height: 100vh;
     position: absolute;
 }
@@ -33,7 +53,7 @@ body {
 }
 
 #intro-image {
-    border: 1vw solid #A7EA52;
+    border: 1vw solid var(--color-3);
     border-radius: 50%;
     padding: 1vw;
 }
@@ -43,14 +63,14 @@ body {
 }
 
 .grad {
-    background: linear-gradient(to right, #A7EA52, #5DCEAF);
+    background: var(--grad);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .bg-grad {
-    background: linear-gradient(to right, #A7EA52, #5DCEAF);
+    background: var(--grad);
 }
 
 .bg-grad.active {
@@ -68,17 +88,17 @@ body {
 
 a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: var(--color-2);
 }
 
 a:hover {
-    color: #5DCEAF;
+    color: var(--color-3);
 }
 
 .icons {
     padding: 5% 0;
     text-decoration: none;
-    color: #A7EA52;
+    color: var(--color-3);
     font-size: 2vw;
 }
 
@@ -89,14 +109,14 @@ a:hover {
 
 #fa-mouse {
     opacity: 1;
-    color: #A7EA52;
+    color: var(--color-2)
 }
 
 #projectScreen {
     position: absolute;
     top: 100vh;
     width: 100%;
-    background: linear-gradient(180deg, rgba(33,39,69,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, #222222 0%, #000000 100%);
 }
 
 #projectHeader {
@@ -124,6 +144,17 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8) 90%);
     z-index: 1;
+    font-family: "Playfair Display", serif;
+}
+
+.overlay.card-title {
+    font-size: 4vw;
+    line-height: 2.5vw;
+}
+
+.overlay.card-text {
+    font-size: 2vw;
+    line-height: 2.5vw;
 }
