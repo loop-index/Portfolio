@@ -149,12 +149,3 @@ a:hover {
     font-family: "Playfair Display", serif;
 }
 
-.overlay.card-title {
-    font-size: 4vw;
-    line-height: 2.5vw;
-}
-
-.overlay.card-text {
-    font-size: 2vw;
-    line-height: 2.5vw;
-}

@@ -35,8 +35,10 @@ let tags = {
 
 // On ready
 $(document).ready(function () {
-    updateAds([]);
+    // Scroll to top
+    $(this).scrollTop(0);
 
+    updateAds([]);
     $(".dspDemo").on("click", function () {
         $(this).toggleClass("active");
         let userTags = [];
@@ -58,52 +60,40 @@ document.addEventListener("wheel", function (e) {
     // console.log('scrolling ' + e.deltaY)
     // console.log(introFading)
     if (introFading) {
-        clearTimeout(scrollTimeoutID);
-        // clearTimeout(fadeTimeoutID);
-
-        scrollTimeoutID = setTimeout(() => {
-            introFading = false;
-            $("#fa-mouse").css("opacity", "1");
-            scrollTimeoutID = null;
-            console.log('scrolling stopped');
-        }, 100);
-        console.log('new scroll ID: ' + scrollTimeoutID)
-
         return;
-    } else if (!scrollTimeoutID) {
-        if (curIntroText >= introText.length - 1 && e.deltaY > 0) {
-            $('body').css({
-                // "height": "auto",
-            });
-            $('#scrollScreen').removeClass('sticky-top');
-            $('#projectScreen').removeClass('d-none');
-            $('#fa-mouse').fadeOut(100);
+    }
+    if (curIntroText >= introText.length - 1 && e.deltaY > 0) {
+        $('body').css({
+            // "height": "auto",
+        });
+        $('#scrollScreen').removeClass('sticky-top');
+        $('#projectScreen').removeClass('d-none');
+        $('#fa-mouse').fadeOut(100);
 
-        } else if ($(document).scrollTop() <= 0) {
-            $('body').css("height", "100vh");
-            $('#scrollScreen').addClass('sticky-top');
-            $('#projectScreen').addClass('d-none');
-            $('#fa-mouse').fadeIn(100);
+    } else if ($(document).scrollTop() <= 0) {
+        $('body').css("height", "100vh");
+        $('#scrollScreen').addClass('sticky-top');
+        $('#projectScreen').addClass('d-none');
+        $('#fa-mouse').fadeIn(100);
 
-            if (e.deltaY < 0 && curIntroText > 0) {
-                curIntroText = Math.max(curIntroText - 1, 0);
-            } else if (e.deltaY > 0 && curIntroText < introText.length - 1) {
-                curIntroText = Math.min(curIntroText + 1, introText.length - 1);
-            } else {
-                return;
-            }
-
-            introFading = true;
-            $("#intro-text").fadeOut(500, function () {
-                $(this).html(introText[curIntroText]);
-                $("#fa-mouse").css("opacity", "0.2");
-            }).fadeIn(500, null, function () {
-                // fadeTimeoutID = setTimeout(() => {
-                //     introFading = false;
-                //     $("#fa-mouse").css("opacity", "1");
-                // }, 500);
-            });
+        if (e.deltaY < 0 && curIntroText > 0) {
+            curIntroText = Math.max(curIntroText - 1, 0);
+        } else if (e.deltaY > 0 && curIntroText < introText.length - 1) {
+            curIntroText = Math.min(curIntroText + 1, introText.length - 1);
+        } else {
+            return;
         }
+
+        introFading = true;
+        $("#intro-text").fadeOut(500, function () {
+            $(this).html(introText[curIntroText]);
+            $("#fa-mouse").css("opacity", "0.2");
+        }).fadeIn(500, null, function () {
+            fadeTimeoutID = setTimeout(() => {
+                introFading = false;
+                $("#fa-mouse").css("opacity", "1");
+            }, 2000);
+        });
     }
 });
 
@@ -139,7 +129,7 @@ function updateAds(userTags) {
                     <img src="https://cataas.com/${image}" class="card-img-top" alt="..." style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="overlay">
                         <div class="card-img-overlay d-flex flex-column justify-content-end text-light">
-                            <h1 class="card-title">${data.advertiser}</h1>
+                            <h5 class="card-title">${data.advertiser}</h5>
                             <p class="card-text">${data.adText}</p>
                         </div>
                     </div>
