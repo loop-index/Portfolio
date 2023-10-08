@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Playfair+Display&family=Roboto+Mono&display=swap');
+
+:root {
+    --bg-color: #1e1e1e;
+    --yellow: #fbc324;
+    --white: #faf0e6;
+
+    --grad: linear-gradient(to right, #ffffff, #cccccc);
+    --highlight: #fbc324;
+    --color-1: #999999;
+    --color-2: #FFFFFF;
+    --color-3: #fbc324;
+    --color-4: #bbbbbb;
+    --color-5: #888888;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    background-color: #222222;
+}
+
+.color-1 {
+    color: var(--color-1);
+}
+
+#intro-flex {
+    width: 100%;
+    height: 100%;
+    padding: 10vh 10vw;
+}
+
+#intro-image {
+    border: 1vw solid var(--color-3);
+    border-radius: 50%;
+    padding: 1vw;
+}
+
+#intro-text {
+    padding: 5px;
+}
+
+.grad {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-grad {
+    background: var(--grad);
+}
+
+.bg-grad.active {
+    background: linear-gradient(to right, #84b840, #43937d);
+}
+
+.highlight {
+    color: #fbc324;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-2);
+}
+
+a:hover {
+    color: var(--color-3);
+}
+
+.icons {
+    padding: 5% 0;
+    text-decoration: none;
+    color: var(--color-3);
+    font-size: 2vw;
+}
+
+
+
+

@@ -1,6 +1,6 @@
 {
     // "liveServer.settings.file": "/public/index.html",
     // "liveServer.settings.root": "/public"
-    "liveServer.settings.file": "/root/index.html",
-    "liveServer.settings.root": "/root"
+    "liveServer.settings.file": "/new/index.html",
+    "liveServer.settings.root": "/new"
 }
