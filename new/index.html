@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duong Nguyen's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="img/cat.jpg">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/5f24f51df9.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Header Icons -->
+    <div class="container-fluid position-absolute sticky-top d-flex justify-content-center" id="header">
+        <div class="d-flex justify-content-between align-items-center p-1" id="icons">
+            <a href="mailto: nguye958@msu.edu" target="_blank"><i class="fas fa-envelope mx-2"></i></a>
+            <a href="tel: 15179805218" target="_blank"><i class="fas fa-phone-alt mx-2"></i></a>
+            <a href="/Duong_Nguyen_Resume.pdf" target="_blank"><i class="fas fa-file-lines mx-2"></i></a>
+            <a href="https://github.com/loop-index" target="_blank"><i class="fab fa-github mx-2"></i></a>
+            <a href="https://www.linkedin.com/in/duongtn/" target="_blank"><i class="fab fa-linkedin-in mx-2"></i></a>
+        </div>
+    </div>
+    <!-- Intro -->
+    <div class="align-self-center" id="intro">
+        <div class="d-flex flex-column justify-content-center align-items-center" id="intro-flex">
+            <div class="row" id="intro-content">
+                <div class="col-12 col-md-5 d-flex flex-column justify-content-center p-5">
+                    <img class="img-fluid rounded-pill" src="duong.jpg" alt="intro image" id="intro-image">
+                </div>
+                <div class="col-12 col-md-7 d-flex flex-column justify-content-center" id="intro-text p-3">
+                    <p class="color-1 intro-hi">hi, </p>
+                    <p class="color-1 intro-hi">i'm <span class="highlight">duong.</span></p>
+                    <br>
+                    <p class="color-1 intro-intro"><span class="grad">i’m a junior studying </span><span class="highlight">computer science</span><span class="grad"> at michigan state university, with a minor in </span><span class="highlight">game development</span>.</p>
+                    <p class="color-1 intro-intro"><span class="grad">in my free time, when i’m not endlessly browsing the net, i do play </span><span class="highlight">guitar</span><span class="grad">. i am in a </span><a href="https://open.spotify.com/artist/3gmhn3vGKwE48jxT1w7bHh?si=t7-lW0iXRw6j7tnekwN0sA" target="_blank">band</a>!</p>
+                    <p class="color-1 intro-intro"><span class="grad">i also used to be a first robotics kid. hello from team </span><a href="https://gart6520.com" target="_blank">6520</a>!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- Search -->
+    
+
+    <div class="row m-0 px-2" id="jobs">
+        <div class="col-12 col-md-3 col-xl-2">
+
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="col-12 col-md-9 col-xl-10 input-group mb-2 p-2">
+                <h1 class="text-light">Let's find you the right <s>job</s> thing!</h1>
+                <p class="text-light">I have a bunch of things. Use the filters and search to find the thing that you're looking for, whether you are a prospective recruiter or my nosy friend who is stalking my amazing development.</p>
+                <small class="text-muted">Yes, this is a parody of a job search site. Have fun.</small>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="search-panel" class="m-0">
+        <div class="row m-0">
+            <div class="col-12 col-md-3 col-xl-2">
+                <br>
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="input-group mb-2 px-2">
+                    <input type="text" class="form-control" placeholder="This doesn't actually work (yet)">
+                    <span class="input-group-text" id="search-btn">
+                        <i class="fa-solid fa-search"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0" id="jobs">
+            <div class="col-12 col-md-3 col-xl-2">
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="px-2 py-1">
+                    <input type="checkbox" class="btn-check filter" id="relevant-filter" autocomplete="off" checked>
+                    <label class="btn btn-outline-warning my-md-2" for="relevant-filter">Relevant</label>
+                
+                    <input type="checkbox" class="btn-check filter" id="work-filter" autocomplete="off">
+                    <label class="btn btn-outline-warning my-md-2" for="work-filter">Work</label>
+                
+                    <input type="checkbox" class="btn-check filter" id="skill-filter" autocomplete="off">
+                    <label class="btn btn-outline-warning my-md-2" for="skill-filter">Skills</label>
+
+                    <input type="checkbox" class="btn-check filter" id="project-filter" autocomplete="off">
+                    <label class="btn btn-outline-warning my-md-2" for="project-filter">Projects</label>
+                </div>
+                <div class="row m-0" id="cards"></div>
+            </div>
+        </div>
+    </div>
+   
+
+    <script type="module" src="firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
