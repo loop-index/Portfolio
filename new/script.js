@@ -37,8 +37,9 @@ $(document).ready(function() {
             // Otherwise, hide all cards
             $('.item').addClass('d-none');
             // Show cards with active filters
-            let combined = '.' + filters.join('.');
-            $(combined).removeClass('d-none');
+            filters.forEach(filter => {
+                $('.' + filter).removeClass('d-none');
+            });
         }
     });
 });
