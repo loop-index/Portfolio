@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-96KQY9DPZ8"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-96KQY9DPZ8');
+    </script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +21,8 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/5f24f51df9.js" crossorigin="anonymous"></script>
     <!-- custom css -->
@@ -24,7 +34,6 @@
     <div class="container-fluid position-absolute sticky-top d-flex justify-content-center" id="header">
         <div class="d-flex justify-content-between align-items-center p-1" id="icons">
             <a href="mailto: nguye958@msu.edu" target="_blank"><i class="fas fa-envelope mx-2"></i></a>
-            <a href="tel: 15179805218" target="_blank"><i class="fas fa-phone-alt mx-2"></i></a>
             <a href="/Duong_Nguyen_Resume.pdf" target="_blank"><i class="fas fa-file-lines mx-2"></i></a>
             <a href="https://github.com/loop-index" target="_blank"><i class="fab fa-github mx-2"></i></a>
             <a href="https://www.linkedin.com/in/duongtn/" target="_blank"><i class="fab fa-linkedin-in mx-2"></i></a>
@@ -34,7 +43,7 @@
     <div class="align-self-center" id="intro">
         <div class="d-flex flex-column justify-content-center align-items-center" id="intro-flex">
             <div class="row" id="intro-content">
-                <div class="col-12 col-md-5 d-flex flex-column justify-content-center p-5">
+                <div class="col-12 col-md-5 d-flex flex-column justify-content-center px-5 py-2">
                     <img class="img-fluid rounded-pill" src="duong.jpg" alt="intro image" id="intro-image">
                 </div>
                 <div class="col-12 col-md-7 d-flex flex-column justify-content-center" id="intro-text p-3">
@@ -51,53 +60,135 @@
 
     <hr>
     <!-- Search -->
-    <div class="row m-0 px-2" id="jobs">
-        <div class="col-12 col-md-3 col-xl-2">
-
-        </div>
-        <div class="col-12 col-md-9">
-            <div class="col-12 col-md-9 col-xl-10 input-group mb-2 p-2">
-                <h1 class="text-light">Let's find you the right <s>job</s> thing!</h1>
-                <p class="text-light">I have a bunch of things. Use the filters and search to find the thing that you're looking for, whether you are a prospective recruiter or my nosy friend who is stalking my amazing development.</p>
-                <small class="text-muted">Yes, this is a parody of a job search site. Have fun.</small>
-            </div>
-        </div>
-    </div>
-
-    <br>
-
     <div id="search-panel" class="m-0">
-        <div class="row m-0">
-            <div class="col-12 col-md-3 col-xl-2">
-                <br>
+        <div class="row m-0" id="jobs">
+            <div class="col-12 col-lg-3 col-xxl-2">
             </div>
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-lg-9">
+                <!-- Text -->
+                <div class="col-12 col-lg-9 col-xl-10 mb-2 p-2">
+                    <h1 class="text-light">Let's find you the right <s>job</s> thing!</h1>
+                    <p class="text-light mb-1">I have a bunch of things. Use the filters and search to find the thing that you're looking for, whether you are a prospective recruiter or my nosy friend who is stalking my amazing development.</p>
+                    <small class="text-secondary">Yes, this is a parody of a job search site. Have fun.</small>
+                </div>
+
+                <!-- Search Bar -->
                 <div class="input-group mb-2 px-2">
-                    <input type="text" class="form-control" placeholder="This doesn't actually work (yet)">
+                    <input type="text" class="form-control" placeholder="Search for keywords, tags, etc." id="search-bar">
                     <span class="input-group-text" id="search-btn">
                         <i class="fa-solid fa-search"></i>
                     </span>
                 </div>
-            </div>
-        </div>
-        <div class="row m-0" id="jobs">
-            <div class="col-12 col-md-3 col-xl-2">
-            </div>
-            <div class="col-12 col-md-9">
-                <div class="px-2 py-1">
-                    <!-- <input type="checkbox" class="btn-check filter" id="relevant-filter" autocomplete="off" checked>
-                    <label class="btn btn-outline-warning my-md-2" for="relevant-filter">Relevant</label> -->
-                
+
+                <!-- Filters -->
+                <div class="px-2">
+                    <span class="text-light my-1">
+                        Filters
+                    </span>
+                    <input type="checkbox" class="btn-check" id="relevant-filter" autocomplete="off" data-bs-toggle="tooltip" data-bs-title="Default tooltip" checked>
+                    <label class="btn btn-outline-warning my-1" for="relevant-filter">Recruiter Mode</label>
                     <input type="checkbox" class="btn-check filter" id="work-filter" autocomplete="off">
-                    <label class="btn btn-outline-warning my-md-2" for="work-filter">Work</label>
+                    <label class="btn btn-outline-warning my-1" for="work-filter">Work</label>
                 
                     <input type="checkbox" class="btn-check filter" id="skill-filter" autocomplete="off">
-                    <label class="btn btn-outline-warning my-md-2" for="skill-filter">Skills</label>
+                    <label class="btn btn-outline-warning my-1" for="skill-filter">Skills</label>
 
                     <input type="checkbox" class="btn-check filter" id="project-filter" autocomplete="off">
-                    <label class="btn btn-outline-warning my-md-2" for="project-filter">Projects</label>
+                    <label class="btn btn-outline-warning my-1" for="project-filter">Projects</label>
+                    <br>
+                    <small class="text-secondary">Click on the tags to filter by them.</small>
+                    <small class="text-secondary d-none" id="relevant-tooltip">Why did I have a recruiter mode button? Because they are busy people and shouldn't be forced to read a bunch of irrelevant ramblings.</small>
                 </div>
+
+                <!-- Cards -->
                 <div class="row m-0" id="cards"></div>
+                <div id="no-results" class="text-center text-light mt-2 d-none">No results found. Try different filters or queries.</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row m-0">
+        <div class="col-0 col-lg-2"></div>
+        <div class="col-12 col-lg-8">
+            <h1 class="text-light text-center">Demo Reel</h1>
+
+            <!-- Demo -->
+            <div id="demo-reel" class="carousel slide px-2">
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item h-100 active">
+                        <div class="d-flex flex-column w-100 h-100">
+                            <div class="flex-grow-1">
+                                <iframe src="https://debttracker-68158.web.app" title="DebtTracker" style="width: 100%; height: 100%; border-radius: 5px;"></iframe>
+                            </div>
+                            <div class="text-light">
+                                <p class="mb-0 mt-2">PaybackPal</p>
+                                <small>This is an embedded demo. Test account: test@email.com, password: testuser (Yes this is not secure, sue me)</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <div class="d-flex flex-column w-100 h-100">
+                            <div class="flex-grow-1">
+                                <iframe src="https://dsp-555b3b937386.herokuapp.com" title="DSP" style="width: 100%; height: 100%; border-radius: 5px;"></iframe>
+                            </div>
+                            <div class="text-light">
+                                <p class="mb-0 mt-2">Mockup DSP</p>
+                                <small>This is a quick interface I threw together to test out some parameters. The main attraction is cats. I have no idea if this actually works.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <div class="d-flex flex-column w-100 h-100">
+                            <div class="flex-grow-1">
+                                <img src="img/fish.png" class="cover img-fluid rounded" alt="...">
+                            </div>
+                            <div class="text-light">
+                                <p class="mb-0 mt-2">Unfinished Fishing Game</p>
+                                <small class="mb-0">This is a screenshot from a fishing game I'm working on. The player just threw a fish at a monster, knocking it back.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators position-relative mt-2">
+                    <button class="btn text-light" id="demo-prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button type="button" data-bs-target="#demo-reel" data-bs-slide-to="0" class="active d-none" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#demo-reel" data-bs-slide-to="1" class="d-none" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#demo-reel" data-bs-slide-to="2" class="d-none" aria-label="Slide 3"></button>
+                    <button class="btn text-light" id="demo-next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="contact-form" class="row m-0">
+        <div class="col-0 col-lg-3"></div>
+        <div class="col-12 col-lg-6 px-4">
+            <h1 class="text-light mb-0">Send me a message</h1>
+            <small class="text-secondary">If you want to compliment my awesome personality or discuss a big job offer (wink)</small>
+            <div class="mb-2 mt-4">
+                <label for="name-form" class="form-label text-light">Something I can contact you at, ie. email, phone etc. Ideally verifiable in case someone decides to pull a big prank.</label>
+                <input type="text" class="form-control" id="name-form" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="message-form" class="form-label text-light">Your message (or offer, please)</label>
+                <textarea class="form-control" id="message-form" rows="8" placeholder="A heartfelt message about how I have inspired your life's direction, wow."></textarea>
+            </div>
+            <div class="d-flex justify-content-end mb-3">
+                <button type="button" class="btn btn-outline-warning me-2" id="reset-btn">Reset</button>
+                <button type="button" class="btn btn-warning" id="submit-btn">Send</button>
+            </div>
+            <div class="text-secondary text-center mb-2">
+                <small>This site was made with jQuery and Bootstrap, again. I contemplated about putting this on the list as a project, but I'm not that lame.</small>
             </div>
         </div>
     </div>

@@ -19,6 +19,9 @@
 body {
     font-family: "Roboto Mono", monospace;
     background-color: #222222;
+    overflow-y: scroll;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
 }
 
 .color-1 {
@@ -53,6 +56,10 @@ a:hover {
 }
 
 /* Intro */
+#intro {
+    scroll-snap-align: start;
+}
+
 #intro-flex {
     width: 100%;
     min-height: 100vh;
@@ -96,6 +103,10 @@ a:hover {
     .card-icon {
         font-size: 10vw;
     }
+
+    #demo-reel {
+        height: 100vw;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -127,6 +138,11 @@ a:hover {
 }
 
 /* Filters */
+#search-panel {
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
 .collapsible, .filter {
     cursor: pointer;
     text-decoration: none;
@@ -159,12 +175,12 @@ small {
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    @supports (-webkit-line-clamp: 3) {
+    @supports (-webkit-line-clamp: 2) {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: initial;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
     }
 }
@@ -173,5 +189,36 @@ small {
     cursor: pointer;
 }
 
+/* Demo */
+@media screen and (max-width: 992px) {
+    #demo-reel {
+        height: 100vw;
+        max-height: 520px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #demo-reel {
+        height: 45vw;
+    }
+}
+
+.carousel-item {
+    min-height: 0;
+}
+
+.cover {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-control-prev {
+    margin-top: 115%;
+}
+
+.carousel-control-next {
+    margin-top: 115%;
+}
 
 
